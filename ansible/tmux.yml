@@ -1,0 +1,31 @@
+- name: brew
+  homebrew:
+    name: [ tmux, fzf ]
+    state: latest
+  tags: 
+
+- name: .tmux.conf 
+  command: "cp ~/.dotfiles/.tmux.conf ~/"
+
+# - name: tmux exists
+#   stat:
+#    path: "~/.config/tmux"
+#   register: tmux 
+
+# - name: clone tmux
+#   ansible.builtin.git: 
+#     repo: 'git@github.com/jakebark/tmux.git' 
+#     bare: true
+#     dest: "~/.config/tmux"
+#   when: tmux.stat.exists == False
+
+# - name: pull tmux
+#   git:
+#     repo: "https://github.com/jakebark/tmux"
+#     dest: "~/.config/tmux"
+#     update: yes
+#   when: tmux.stat.exists == True
+
+- name: 
+  command: "chmod +x ~/.dotfiles/scripts/tmux-sessionizer"
+

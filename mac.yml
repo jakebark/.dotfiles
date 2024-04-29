@@ -1,51 +1,11 @@
 ---
 - name: macOS
   hosts: localhost
-  gather_facts: no
+  # pre_tasks:
   tasks:
-    - name: Get .zshrc file from GitHub
-      command: "curl -o ~/.zshrc https://raw.github.com/jakebark/.dotfiles/.zshrc"
+    - include: ./ansible/zsh.yml
+    - include: ./ansible/tmux.yml
+    - include: ./ansible/nvim.yml
+    - include: ./ansible/yabai.yml
 
-    - name: Get .tmux.conf file from GitHub
-      command: "curl -o ~/.tmux.conf https://raw.github.com/jakebark/.dotfiles/.tmux.conf"
 
-    # - name: 
-    #   command: "chmod +x ~/.local/scripts/tmux-sessionizer"
-
-    - name: fzf
-      homebrew:
-        name: fzf
-        state: latest
-
-    - name: tmux
-      homebrew:
-        name: tmux
-        state: latest
-
-    - name: nvim
-      homebrew:
-        name: neovim
-        state: latest
-
-    # - name: nvim
-    #   vars:
-    #     repo_path: ~/.config/nvim
-    #     repo_url: https://github.com/your_username/config_repo.git
-    #   block:
-    #     - name: Check if ~/.config exists
-    #       stat:
-    #         path: "{{ repo_path }}"
-    #       register: repo_stat
-
-    #     - name: Clone the repository if it doesn't exist
-    #       git:
-    #         repo: "{{ repo_url }}"
-    #         dest: "{{ repo_path }}"
-    #       when: not repo_stat.stat.exists
-
-    #     - name: Pull the repository if it exists
-    #       git:
-    #         repo: "{{ repo_url }}"
-    #         dest: "{{ repo_path }}"
-    #         update: yes
-    #       when: repo_stat.stat.exists

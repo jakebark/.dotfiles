@@ -1,3 +1,3 @@
-PATH="$PATH":"$HOME/.local/scripts/"
+PATH="$PATH":"$HOME/.dotfiles/scripts/"
 
 bindkey -s ^f "tmux-sessionizer\n"

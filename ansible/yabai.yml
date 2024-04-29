@@ -1,0 +1,11 @@
+- name: brew
+  homebrew:
+    name: yabai
+    state: latest
+
+- name: .yabairc
+  command: "cp ~/.dotfiles/.yabairc ~/"
+
+- name: start 
+  command: "yabai --start-service"
+

@@ -1,2 +1,4 @@
 - name: .zshrc
   command: "cp ~/.dotfiles/.zshrc ~/"
+  tags:
+    - zsh

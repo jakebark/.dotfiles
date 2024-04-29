@@ -1,11 +1,16 @@
-- name: brew
+- name: yabai brew
   homebrew:
     name: yabai
     state: latest
+  tags:
+    - yabai
 
 - name: .yabairc
   command: "cp ~/.dotfiles/.yabairc ~/"
+  tags:
+    - yabai
 
-- name: start 
-  command: "yabai --start-service"
-
+      # - name: yabai start 
+#   command: "yabai --start-service"
+#   tags:
+#     - yabai

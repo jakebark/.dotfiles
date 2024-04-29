@@ -1,12 +1,16 @@
 - name: nvim brew
   homebrew:
-    name: [ neovim, lua, luarocks ] 
+    name: [ "neovim", "lua", "luarocks" ] 
     state: latest
+  tags:
+    - nvim
 
 -  name: nvim exists
    stat:
      path: "~/.config/nvim"
    register: nvim 
+   tags:
+    - nvim
 
 - name: nvim clone
   ansible.builtin.git: 
@@ -14,10 +18,14 @@
     bare: true
     dest: "~/.config/nvim"
   when: nvim.stat.exists == False
+  tags:
+    - nvim
 
-- name: pull nvim
+- name: nvim pull
   git:
     repo: "https://github.com/jakebark/nvim"
     dest: "~/.config/nvim"
     update: yes
   when: nvim.stat.exists == True
+  tags:
+    - nvim

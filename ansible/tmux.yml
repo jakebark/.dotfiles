@@ -1,11 +1,14 @@
-- name: brew
+- name: tmux brew
   homebrew:
-    name: [ tmux, fzf ]
+    name: [ "tmux", "fzf" ]
     state: latest
-  tags: 
+  tags:
+    - tmux
 
 - name: .tmux.conf 
   command: "cp ~/.dotfiles/.tmux.conf ~/"
+  tags:
+    - tmux
 
 # - name: tmux exists
 #   stat:
@@ -26,6 +29,7 @@
 #     update: yes
 #   when: tmux.stat.exists == True
 
-- name: 
+- name: tmux sessionizer 
   command: "chmod +x ~/.dotfiles/scripts/tmux-sessionizer"
-
+  tags:
+    - tmux

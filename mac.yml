@@ -3,9 +3,9 @@
   hosts: localhost
   # pre_tasks:
   tasks:
-    - include: ./ansible/zsh.yml
-    - include: ./ansible/tmux.yml
-    - include: ./ansible/nvim.yml
-    - include: ./ansible/yabai.yml
+    - include_tasks: ./ansible/zsh.yml
+    - include_tasks: ./ansible/tmux.yml
+    - include_tasks: ./ansible/nvim.yml
+    - include_tasks: ./ansible/yabai.yml
 
 

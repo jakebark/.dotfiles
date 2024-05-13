@@ -26,6 +26,7 @@
     repo: "https://github.com/jakebark/nvim"
     dest: "~/.config/nvim"
     update: yes
+    force: true
   when: nvim.stat.exists == True
   tags:
     - nvim

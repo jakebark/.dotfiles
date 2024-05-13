@@ -7,5 +7,5 @@
     - include_tasks: ./ansible/tmux.yml
     - include_tasks: ./ansible/nvim.yml
     - include_tasks: ./ansible/yabai.yml
-
+  tags: always
 

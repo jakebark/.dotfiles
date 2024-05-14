@@ -2,3 +2,4 @@
   command: "cp ~/.dotfiles/.zshrc ~/"
   tags:
     - zsh
+    - conf

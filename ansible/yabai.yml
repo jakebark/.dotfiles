@@ -9,6 +9,7 @@
   command: "cp ~/.dotfiles/.yabairc ~/"
   tags:
     - yabai
+    - conf
 
       # - name: yabai start 
 #   command: "yabai --start-service"

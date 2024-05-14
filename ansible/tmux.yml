@@ -9,6 +9,13 @@
   command: "cp ~/.dotfiles/.tmux.conf ~/"
   tags:
     - tmux
+    - conf
+
+- name: tmux reload
+  command: "tmux source-file ~/.tmux.conf"
+  tags:
+    - tmux
+    - conf
 
 - name: tmux sessionizer 
   command: "chmod +x ~/.dotfiles/scripts/tmux-sessionizer"

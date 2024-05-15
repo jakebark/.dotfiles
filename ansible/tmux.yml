@@ -1,6 +1,6 @@
 - name: tmux brew
   homebrew:
-    name: [ "tmux", "fzf" ]
+    name: [ "tmux", "fzf", "reattach-to-user-namespace"]
     state: latest
   tags:
     - tmux

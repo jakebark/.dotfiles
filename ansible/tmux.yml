@@ -11,13 +11,13 @@
     - tmux
     - conf
 
+- name: tmux sessionizer 
+  command: "chmod +x ~/.dotfiles/scripts/tmux-sessionizer"
+  tags:
+    - tmux
+
 - name: tmux reload
   command: "tmux source-file ~/.tmux.conf"
   tags:
     - tmux
     - conf
-
-- name: tmux sessionizer 
-  command: "chmod +x ~/.dotfiles/scripts/tmux-sessionizer"
-  tags:
-    - tmux

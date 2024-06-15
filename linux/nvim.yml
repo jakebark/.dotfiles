@@ -1,0 +1,32 @@
+- name: nvim brew
+  homebrew:
+    name: [ "neovim", "lua", "luarocks" ] 
+    state: latest
+  tags:
+    - nvim
+
+-  name: nvim exists
+   stat:
+     path: "~/.config/nvim"
+   register: nvim 
+   tags:
+    - nvim
+
+- name: nvim clone
+  git:
+    repo: "https://github.com/jakebark/nvim"
+    dest: "~/.config/nvim"
+    clone: yes
+  when: nvim.stat.exists == False
+  tags:
+    - nvim
+
+- name: nvim pull
+  git:
+    repo: "https://github.com/jakebark/nvim"
+    dest: "~/.config/nvim"
+    pull: yes
+    force: true
+  when: nvim.stat.exists == True
+  tags:
+    - nvim

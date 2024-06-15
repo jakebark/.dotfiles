@@ -1,0 +1,23 @@
+- name: tmux apt
+  apt:
+    name: [ "tmux", "fzf"]
+    state: present
+  tags:
+    - tmux
+
+- name: .tmux.conf 
+  command: "cp ~/.dotfiles/.tmux.conf ~/"
+  tags:
+    - tmux
+    - conf
+
+- name: tmux sessionizer 
+  command: "chmod +x ~/.dotfiles/scripts/tmux-sessionizer"
+  tags:
+    - tmux
+
+- name: tmux reload
+  command: "tmux source-file ~/.tmux.conf"
+  tags:
+    - tmux
+    - conf

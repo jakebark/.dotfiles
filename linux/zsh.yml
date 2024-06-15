@@ -1,0 +1,26 @@
+- name: zsh
+  apt: 
+    name: zsh
+    state: present 
+  tags:
+    - zsh
+
+- name: zsh default
+  user: 
+    name: "{{ansible_user}}"
+    shell: /usr/bin/zsh
+  when: ansible_user_id !=root
+  
+- name: zsh .bashrc 
+  lineinfile:
+    path: ~/.bashrc
+    line: '[ -t 1 ] && exec zsh'
+    state: present
+  when: ansible_user_id != root
+
+- name: .zshrc
+  command: "cp ~/.dotfiles/.zshrc ~/"
+  tags:
+    - zsh
+    - conf
+

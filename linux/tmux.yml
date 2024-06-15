@@ -17,7 +17,10 @@
     - tmux
 
 - name: tmux reload
-  command: "tmux source-file ~/.tmux.conf"
+  command: |
+    tmux
+    tmux source-file ~/.tmux.conf
+    tmux kill-session
   tags:
     - tmux
     - conf

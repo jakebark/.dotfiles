@@ -15,12 +15,3 @@
   command: "chmod +x ~/.dotfiles/scripts/tmux-sessionizer"
   tags:
     - tmux
-
-- name: tmux reload
-  command: |
-    tmux
-    tmux source-file ~/.tmux.conf
-    tmux kill-session
-  tags:
-    - tmux
-    - conf

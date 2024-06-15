@@ -6,8 +6,8 @@
     - tmux
 
 - name: .tmux.conf 
-  src: "~/.dotfiles/.tmux.conf ~/"
-  dest: "~/.tmux.conf ~/"
+  src: "~/.dotfiles/.tmux.conf" 
+  dest: "~/.tmux.conf" 
   tags:
     - tmux
     - conf

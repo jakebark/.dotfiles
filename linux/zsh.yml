@@ -7,7 +7,7 @@
 
 - name: zsh default
   user: 
-    name: "{{ ansible_user }}"
+    name: root
     shell: /usr/bin/zsh
   
 - name: zsh .bashrc 

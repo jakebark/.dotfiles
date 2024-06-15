@@ -7,7 +7,7 @@
 
 - name: .tmux.conf 
   src: "~/.dotfiles/.tmux.conf ~/"
-  copy: "~/.tmux.conf ~/"
+  dest: "~/.tmux.conf ~/"
   tags:
     - tmux
     - conf

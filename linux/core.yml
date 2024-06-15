@@ -1,0 +1,8 @@
+- name: core packages
+  become: true
+  apt:
+    name: ["build-essential", "cmake", "gettext", "ninja-build", "curl", "unzip", "clang"]
+  tags:
+    - install
+    - neovim
+    - coreic

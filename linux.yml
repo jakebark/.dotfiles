@@ -4,6 +4,7 @@
   become: yes
   # pre_tasks:
   tasks:
+    - import_tasks: ./linux/core.yml
     - import_tasks: ./linux/zsh.yml
     - import_tasks: ./linux/tmux.yml
     - import_tasks: ./linux/nvim.yml

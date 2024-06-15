@@ -17,7 +17,7 @@
 - name: clang
   become: true
   apt:
-    name: ["clang", "clang-11", "clang-12", "clangd", "clangd-10", "clangd-11", "clangd-12"]
+    name: ["clang", "clangd"]
   tags:
     - nvim
     - core

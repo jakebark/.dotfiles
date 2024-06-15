@@ -1,6 +1,6 @@
 - name: nvim apt
   apt:
-    name: [ "neovim", "lua5.3", "luarocks" ] 
+    name: neovim 
     state: present
   tags:
     - nvim

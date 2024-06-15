@@ -1,8 +1,31 @@
 - name: core packages
   become: true
   apt:
-    name: ["build-essential", "cmake", "gettext", "ninja-build", "curl", "unzip", "clang"]
+    name: ["build-essential", "cmake", "gettext", "ninja-build", "curl", "unzip", "pkg-config"]
   tags:
-    - install
-    - neovim
-    - coreic
+    - nvim
+    - core
+      
+- name: libtool 
+  become: true
+  apt:
+    name: ["libtool", "libtool-bin"]
+  tags:
+    - nvim
+    - core
+      
+- name: clang
+  become: true
+  apt:
+    name: ["clang", "clang-11", "clang-12", "clangd", "clangd-10", "clangd-11", "clangd-12"]
+  tags:
+    - nvim
+    - core
+      
+- name: lua
+  become: true
+  apt:
+    name: ["lua5.3", "luarocks"]
+  tags:
+    - nvim
+    - core

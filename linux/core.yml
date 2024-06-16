@@ -1,9 +1,8 @@
 - name: core packages
   become: true
   apt:
-    name: ["build-essential", "cmake", "gettext", "ninja-build", "curl", "unzip", "pkg-config"]
+    name: ["build-essential", "cmake", "gettext", "ninja-build", "curl", "unzip", "pkg-config", "tar"]
   tags:
-    - nvim
     - core
       
 - name: libtool 
@@ -11,7 +10,6 @@
   apt:
     name: ["libtool", "libtool-bin"]
   tags:
-    - nvim
     - core
       
 - name: clang
@@ -19,7 +17,6 @@
   apt:
     name: ["clang", "clangd"]
   tags:
-    - nvim
     - core
       
 - name: lua
@@ -27,5 +24,18 @@
   apt:
     name: ["lua5.3", "luarocks"]
   tags:
-    - nvim
+    - core
+
+- name: python
+  become: true
+  apt:
+    name: ["python3-pip", "python3-pylsp"]
+  tags:
+    - core
+
+- name: npm
+  become: true
+  apt:
+    name: npm
+  tags:
     - core

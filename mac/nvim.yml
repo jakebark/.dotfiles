@@ -5,6 +5,11 @@
   tags:
     - nvim
 
+- name: nvim golang
+  command: "GOPROXY=direct go install golang.org/x/tools/gopls@latest"
+  tags:
+    - nvim
+
 -  name: nvim exists
    stat:
      path: "~/.config/nvim"

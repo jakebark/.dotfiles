@@ -1,6 +1,6 @@
 - name: nvim brew
   homebrew:
-    name: [ "neovim", "lua@5.3", "luarocks" ] 
+    name: [ "neovim", "lua@5.3", "luarocks", "ripgrep" ] 
     state: present
   tags:
     - nvim

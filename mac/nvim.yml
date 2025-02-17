@@ -19,7 +19,7 @@
 
 - name: nvim clone
   ansible.builtin.git: 
-    repo: 'git@github.com/jakebark/nvim.git' 
+    repo: "git@github.com/jakebark/nvim.git"
     bare: true
     dest: "~/.config/nvim"
   when: nvim.stat.exists == False

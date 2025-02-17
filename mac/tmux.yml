@@ -11,6 +11,22 @@
     - tmux
     - conf
 
+-  name: tpm exists
+   stat:
+     path: "~/.tmux/plugins/tpm"
+   register: tpm 
+   tags:
+    - tmux
+
+- name: tpm clone
+  ansible.builtin.git: 
+    repo: "git@github.com/tmux-plugins/tpm"
+    bare: true
+    dest: "~/.tmux/plugins/tpm"
+  when: tpm.stat.exists == True
+  tags:
+    - tmux
+
 - name: tmux sessionizer 
   command: "chmod +x ~/.dotfiles/scripts/tmux-sessionizer"
   tags:
@@ -21,3 +37,4 @@
   tags:
     - tmux
     - conf
+

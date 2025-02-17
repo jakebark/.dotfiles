@@ -19,10 +19,7 @@
     - tmux
 
 - name: tpm clone
-  ansible.builtin.git: 
-    repo: "git@github.com/tmux-plugins/tpm"
-    bare: true
-    dest: "~/.tmux/plugins/tpm"
+  command: git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm 
   when: tpm.stat.exists == False
   tags:
     - tmux

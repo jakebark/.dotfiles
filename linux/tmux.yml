@@ -6,7 +6,7 @@
     - tmux
 
 - name: .tmux.conf 
-  command: "cp ~/.dotfiles/.tmux.conf ~/"
+  command: "cp ~.tmux.conf ~/"
   tags:
     - tmux
     - conf

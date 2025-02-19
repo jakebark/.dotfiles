@@ -13,13 +13,13 @@
     - nvim
 
 - name: nvim clone
-  command: cp -R nvim/* ~/.config/nvim
+  command: sudo cp -R nvim/* ~/.config/nvim
   when: nvim.stat.exists == False
   tags:
     - nvim
 
 - name: nvim pull
-  command: git -C ~/.config/nvim pull
+  command: sudo git -C ~/.config/nvim pull
   when: nvim.stat.exists == True
   tags:
     - nvim

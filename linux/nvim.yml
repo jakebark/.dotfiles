@@ -23,14 +23,8 @@
   tags:
     - nvim
 
-- name: nvim dir
-  command: mkdir ~/.config/nvim
-  when: nvim.stat.exists == False
-  tags:
-    - nvim
-
 - name: nvim clone
-  command: sudo cp -R nvim/* ~/.config/nvim
+  command: sudo git -C ~/.config clone https://github.com/jakebark/nvim.git
   when: nvim.stat.exists == False
   tags:
     - nvim

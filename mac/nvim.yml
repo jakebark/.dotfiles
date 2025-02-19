@@ -18,7 +18,7 @@
     - nvim
 
 - name: nvim clone
-  command: cp -R nvim/* ~/.config/nvim
+  command: git -C ~/.config clone https://github.com/jakebark/nvim.git
   when: nvim.stat.exists == False
   tags:
     - nvim

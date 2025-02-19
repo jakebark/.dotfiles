@@ -19,13 +19,6 @@
   tags:
     - core
       
-- name: lua
-  become: true
-  apt:
-    name: ["lua5.3", "luarocks"]
-  tags:
-    - core
-
 - name: python
   become: true
   apt:

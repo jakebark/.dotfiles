@@ -1,6 +1,6 @@
 ---
 - name: linuxOS
-  hosts: localhost
+  hosts: "localhost"
   become: yes
   # pre_tasks:
   tasks:
@@ -8,8 +8,3 @@
     - import_tasks: ./linux/zsh.yml
     - import_tasks: ./linux/tmux.yml
     - import_tasks: ./linux/nvim.yml
-
-- name: inventory
-  hosts: 
-    localhost:
-      ansible_connection: local

@@ -17,7 +17,7 @@
     state: present
 
 - name: .zshrc
-  command: "cp ~/.dotfiles/.zshrc ~/"
+  command: "cp .zshrc ~/"
   tags:
     - zsh
     - conf

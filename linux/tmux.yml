@@ -25,6 +25,6 @@
     - tmux
 
 - name: tmux sessionizer 
-  command: "chmod +x ~/.dotfiles/scripts/tmux-sessionizer"
+  command: sudo chmod +x scripts/tmux-sessionizer
   tags:
     - tmux

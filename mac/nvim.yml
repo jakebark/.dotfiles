@@ -12,26 +12,19 @@
 
 -  name: nvim exists
    stat:
-     path: "~/.config/nvim"
+     path: ~/.config/nvim
    register: nvim 
    tags:
     - nvim
 
 - name: nvim clone
-  ansible.builtin.git: 
-    repo: "git@github.com/jakebark/nvim.git"
-    bare: true
-    dest: "~/.config/nvim"
+  command: cp -R nvim/* ~/.config/nvim
   when: nvim.stat.exists == False
   tags:
     - nvim
 
 - name: nvim pull
-  git:
-    repo: "https://github.com/jakebark/nvim"
-    dest: "~/.config/nvim"
-    update: yes
-    force: true
+  command: git -C ~/.config/nvim pull
   when: nvim.stat.exists == True
   tags:
     - nvim

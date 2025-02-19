@@ -5,6 +5,11 @@
   tags:
     - nvim
 
+-  name: nvim submodule init
+   command: git submodule init
+   tags: 
+    - nvim 
+
 -  name: nvim exists
    stat:
      path: ~/.config/nvim
@@ -12,14 +17,20 @@
    tags:
     - nvim
 
+- name: nvim .config
+  command: mkdir ~/.config/nvim
+  when: nvim.stat.exists == False
+  tags:
+    - nvim
+
 - name: nvim clone
-  command: sudo cp -R nvim/* ~/.config/nvim
+  command: cp -R nvim/* ~/.config/nvim
   when: nvim.stat.exists == False
   tags:
     - nvim
 
 - name: nvim pull
-  command: sudo git -C ~/.config/nvim pull
+  command: git -C ~/.config/nvim pull
   when: nvim.stat.exists == True
   tags:
     - nvim

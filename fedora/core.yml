@@ -1,0 +1,34 @@
+- name: core packages
+  become: true
+  dnf:
+    name: ["gcc-c++", "make", "cmake", "gettext-devel", "ninja-build", "curl", "unzip", "pkgconf-devel", "tar"]
+  tags:
+    - core
+      
+- name: libtool 
+  become: true
+  dnf:
+    name: ["libtool", "libtool-ltdl-devel"]
+  tags:
+    - core
+      
+- name: clang
+  become: true
+  dnf:
+    name: ["clang", "clang-tools-extra"]
+  tags:
+    - core
+      
+- name: python
+  become: true
+  dnf:
+    name: ["python3-pip", "python3-devel"]
+  tags:
+    - core
+
+- name: npm
+  become: true
+  dnf:
+    name: npm
+  tags:
+    - core

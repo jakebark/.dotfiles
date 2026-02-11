@@ -1,0 +1,36 @@
+- name: nvim dnf
+  dnf:
+    name: [ "neovim", "lua", "luarocks", "ripgrep" ] 
+    state: present
+  tags:
+    - nvim
+
+-  name: nvim submodule init
+   command: git submodule init
+   tags: 
+    - nvim 
+
+-  name: nvim exists
+   stat:
+     path: ~/.config/nvim
+   register: nvim 
+   tags:
+    - nvim
+
+- name: nvim .config dir
+  command: mkdir ~/.config
+  when: nvim.stat.exists == False
+  tags:
+    - nvim
+
+- name: nvim clone
+  command: sudo git -C ~/.config clone https://github.com/jakebark/nvim.git
+  when: nvim.stat.exists == False
+  tags:
+    - nvim
+
+- name: nvim pull
+  command: sudo git -C ~/.config/nvim pull
+  when: nvim.stat.exists == True
+  tags:
+    - nvim

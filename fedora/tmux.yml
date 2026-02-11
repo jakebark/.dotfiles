@@ -1,0 +1,30 @@
+- name: tmux dnf
+  dnf:
+    name: [ "tmux", "fzf"]
+    state: present
+  tags:
+    - tmux
+
+- name: .tmux.conf 
+  command: "cp .tmux.conf ~/"
+  tags:
+    - tmux
+    - conf
+
+-  name: tmp exists
+   stat:
+     path: "~/.tmux/plugins/tpm"
+   register: tmp 
+   tags:
+    - tmux
+
+- name: tpm clone
+  command: git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm 
+  when: tpm.stat.exists == False
+  tags:
+    - tmux
+
+- name: tmux sessionizer 
+  command: sudo chmod +x scripts/tmux-sessionizer
+  tags:
+    - tmux

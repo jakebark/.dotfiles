@@ -1,0 +1,23 @@
+- name: zsh
+  yum: 
+    name: zsh
+    state: present 
+  tags:
+    - zsh
+
+- name: zsh default
+  user: 
+    name: root
+    shell: /usr/bin/zsh
+  
+- name: zsh .bashrc 
+  lineinfile:
+    path: ~/.bashrc
+    line: '[ -t 1 ] && exec zsh'
+    state: present
+
+- name: .zshrc
+  command: "cp .zshrc ~/"
+  tags:
+    - zsh
+    - conf

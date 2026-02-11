@@ -17,5 +17,5 @@ if [ -n "$q_pane" ]; then
         tmux select-pane -t "$q_pane"
     fi
 else
-    tmux split-window -h -p $PANE_PERCENTAGE "claude"
+    tmux split-window -h -p $PANE_PERCENTAGE -c "#{pane_current_path}" "claude"
 fi

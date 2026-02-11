@@ -1,0 +1,11 @@
+# RHEL, CentOS, Amazon Linux
+---
+- name: rhelOS
+  hosts: "localhost"
+  become: yes
+  # pre_tasks:
+  tasks:
+    - import_tasks: ./rhel/core.yml
+    - import_tasks: ./rhel/zsh.yml
+    - import_tasks: ./rhel/tmux.yml
+    - import_tasks: ./rhel/nvim.yml

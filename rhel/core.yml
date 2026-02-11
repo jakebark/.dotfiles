@@ -1,0 +1,34 @@
+- name: core packages
+  become: true
+  yum:
+    name: ["gcc-c++", "make", "cmake", "gettext-devel", "ninja-build", "curl", "unzip", "pkgconfig", "tar"]
+  tags:
+    - core
+      
+- name: libtool 
+  become: true
+  yum:
+    name: ["libtool", "libtool-ltdl-devel"]
+  tags:
+    - core
+      
+- name: clang
+  become: true
+  yum:
+    name: ["clang", "clang-tools-extra"]
+  tags:
+    - core
+      
+- name: python
+  become: true
+  yum:
+    name: ["python3-pip", "python3-devel"]
+  tags:
+    - core
+
+- name: npm
+  become: true
+  yum:
+    name: npm
+  tags:
+    - core

@@ -1,0 +1,11 @@
+# Fedora, Fedora Workstation, Fedora Server, Fedora Silverblue
+---
+- name: fedoraOS
+  hosts: "localhost"
+  become: yes
+  # pre_tasks:
+  tasks:
+    - import_tasks: ./os/fedora/core.yml
+    - import_tasks: ./os/fedora/zsh.yml
+    - import_tasks: ./os/fedora/tmux.yml
+    - import_tasks: ./os/fedora/nvim.yml

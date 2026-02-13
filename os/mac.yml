@@ -1,0 +1,9 @@
+---
+- name: macOS
+  hosts: localhost
+  # pre_tasks:
+  tasks:
+    - import_tasks: ./os/mac/zsh.yml
+    - import_tasks: ./os/mac/tmux.yml
+    - import_tasks: ./os/mac/nvim.yml
+    # - import_tasks: ./mac/yabai.yml

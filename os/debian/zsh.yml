@@ -6,8 +6,8 @@
     - zsh
 
 - name: zsh default
-  user: 
-    name: root
+  user:
+    name: "{{ ansible_user }}"
     shell: /usr/bin/zsh
   
 - name: zsh .bashrc 

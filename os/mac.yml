@@ -6,4 +6,3 @@
     - import_tasks: ./mac/zsh.yml
     - import_tasks: ./mac/tmux.yml
     - import_tasks: ./mac/nvim.yml
-    # - import_tasks: ./mac/yabai.yml

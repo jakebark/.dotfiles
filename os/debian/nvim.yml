@@ -18,19 +18,21 @@
     - nvim
 
 - name: nvim .config dir
-  command: mkdir ~/.config
+  file:
+    path: ~/.config
+    state: directory
   when: nvim.stat.exists == False
   tags:
     - nvim
 
 - name: nvim clone
-  command: sudo git -C ~/.config clone https://github.com/jakebark/nvim.git
+  command: git -C ~/.config clone https://github.com/jakebark/nvim.git
   when: nvim.stat.exists == False
   tags:
     - nvim
 
 - name: nvim pull
-  command: sudo git -C ~/.config/nvim pull
+  command: git -C ~/.config/nvim pull
   when: nvim.stat.exists == True
   tags:
     - nvim

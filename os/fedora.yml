@@ -5,7 +5,7 @@
   become: yes
   # pre_tasks:
   tasks:
-    - import_tasks: ./os/fedora/core.yml
-    - import_tasks: ./os/fedora/zsh.yml
-    - import_tasks: ./os/fedora/tmux.yml
-    - import_tasks: ./os/fedora/nvim.yml
+    - import_tasks: ./fedora/core.yml
+    - import_tasks: ./fedora/zsh.yml
+    - import_tasks: ./fedora/tmux.yml
+    - import_tasks: ./fedora/nvim.yml

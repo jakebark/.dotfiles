@@ -5,7 +5,7 @@
   become: yes
   # pre_tasks:
   tasks:
-    - import_tasks: ./os/debian/core.yml
-    - import_tasks: ./os/debian/zsh.yml
-    - import_tasks: ./os/debian/tmux.yml
-    - import_tasks: ./os/debian/nvim.yml
+    - import_tasks: ./debian/core.yml
+    - import_tasks: ./debian/zsh.yml
+    - import_tasks: ./debian/tmux.yml
+    - import_tasks: ./debian/nvim.yml

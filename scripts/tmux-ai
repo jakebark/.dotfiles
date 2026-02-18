@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export PATH="$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin:$PATH"
+
 PANE_PERCENTAGE=35
 
 if command -v kiro-cli &>/dev/null; then

@@ -1,0 +1,35 @@
+- name: check claude
+  command: which claude
+  register: claude
+  failed_when: false
+  changed_when: false
+  tags:
+    - ai
+
+- name: check kiro-cli
+  command: which kiro-cli
+  register: kiro
+  failed_when: false
+  changed_when: false
+  tags:
+    - ai
+
+- name: claude steering
+  command: "cp ~/.dotfiles/steering.md ~/.CLAUDE.md"
+  when: claude.rc == 0
+  tags:
+    - ai
+
+- name: kiro steering dir
+  file:
+    path: "~/.kiro/steering"
+    state: directory
+  when: kiro.rc == 0
+  tags:
+    - ai
+
+- name: kiro steering
+  command: "cp ~/.dotfiles/steering.md ~/.kiro/steering/steering.md"
+  when: kiro.rc == 0
+  tags:
+    - ai

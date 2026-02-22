@@ -8,4 +8,10 @@
 ## naming principles
 
 - Consistent. Names should be predictable across environments, accounts, and classes. 
+- Scalable. Design names for growth and parameterisation.
+- Self-documenting. Names should be intention-revealing, they should illuminate what a resource or function does.
+- Pronouncable. If you cant pronounce it, you cant discuss it without sounding silly.
+- Searchable. Single-letter names and constants are not easy to locate.
+- Singular. Dont use types in names (eg "function" function)
+
 

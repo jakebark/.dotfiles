@@ -1,6 +1,8 @@
+# nodejs/npm and golang provide the runtimes Mason needs to install LSP
+# servers (node: jsonls, yamlls, dockerls, vimls / go: gopls)
 - name: nvim dnf
   dnf:
-    name: [ "neovim", "lua", "luarocks", "ripgrep" ] 
+    name: [ "neovim", "lua", "luarocks", "ripgrep", "nodejs", "npm", "golang" ]
     state: present
   tags:
     - nvim

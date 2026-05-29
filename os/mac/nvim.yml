@@ -1,14 +1,11 @@
+# node and go provide the runtimes Mason needs to install LSP servers
+# (node: jsonls, yamlls, dockerls, vimls / go: gopls)
 - name: nvim brew
   homebrew:
-    name: [ "neovim", "lua@5.4", "luarocks", "ripgrep" ] 
+    name: [ "neovim", "lua@5.4", "luarocks", "ripgrep", "node", "go" ]
     state: present
   tags:
     - nvim
-
-# - name: nvim golang
-#   command: "GOPROXY=direct go install golang.org/x/tools/gopls@latest"
-#   tags:
-#     - nvim
 
 -  name: nvim exists
    stat:
